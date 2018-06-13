@@ -6,4 +6,8 @@ Building a Persona-Based Chatbot for NIPS ConvAI 2 - McGill AI Society
 	- Contains all files for data and analysis
 - src
 	- Contains all code/functions in the form of .py
+- data
+	- raw
+	- preprocessed
+	- supplemental
 
