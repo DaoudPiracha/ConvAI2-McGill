@@ -1,10 +1,10 @@
 ### Generating Twitter dataset
-in twitter_dataset folder: python3 id2tweet.py TweetIDs_Test.txt [twitter id file] [twitter output file]
-i.e. python3 id2tweet.py TweetIDs_Test.txt tweets_test_final.csv
+in twitter_dataset folder: python3 id2tweet.py TweetIDs_Test.txt [twitter id file] [twitter output file]  
+i.e. python3 id2tweet.py TweetIDs_Test.txt tweets_test_final.csv  
 Note: script can only fetch 450 tweets / 15 minutes
 
 ### Loading Pretrained weights
-VHRED Model: Download Pretrained Model, then place all files in a folder named ./vhred
+VHRED Model: Download Pretrained Model, then place all files in a folder named ./vhred  
 https://drive.google.com/file/d/0B-nb1w_dNuMLY0Fad3N1YU9ZOU0/view?usp=sharing
 
 
