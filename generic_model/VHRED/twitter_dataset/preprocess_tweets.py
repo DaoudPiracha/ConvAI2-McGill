@@ -5,7 +5,7 @@ import math
 
 list_floats = list(np.linspace(0,300,301))
 list_ints = [int(i) for i in list_floats]
-df = pd.read_csv('tweets_test_final.csv', skip_blank_lines=True, names=list_ints, dtype=str)
+df = pd.read_csv('test_100.csv', skip_blank_lines=True, names=list_ints, dtype=str)
 df.fillna('', inplace=True)
 
 print(df.shape)
@@ -18,11 +18,12 @@ for i in range(df.shape[0]):
         if df.loc[i, j] != "":
             df.loc[i, j] = " ".join(filter(lambda x:x[0] != '@', df.loc[i,j].split()))
             df.loc[i, j] = " ".join(filter(lambda x: x[0] != '#', df.loc[i, j].split()))
-            df.loc[i ,j].replace(':)', "")
-            df.loc[i, j].replace('&', "and")
+            df.loc[i, j] = df.loc[i ,j].replace(':)', "")
+            df.loc[i, j] = df.loc[i, j].replace('&', "and")
+            df.loc[i, j] = df.loc[i, j].lower()
             df.loc[i, j] = '</s>' + df.loc[i, j] + '</s>'
 
-f = open('preprocessed_twitter_data_3.txt', 'w')
+f = open('preprocessed_twitter_data_test_100.txt', 'w')
 
 for i in range(df.shape[0]):
     j=0
