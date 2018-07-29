@@ -19,16 +19,19 @@ for i in range(df.shape[0]):
             df.loc[i, j] = " ".join(filter(lambda x:x[0] != '@', df.loc[i,j].split()))
             df.loc[i, j] = " ".join(filter(lambda x: x[0] != '#', df.loc[i, j].split()))
             df.loc[i, j] = df.loc[i ,j].replace(':)', "")
+            df.loc[i, j] = df.loc[i, j].replace(':(', "")
+            df.loc[i, j] = df.loc[i, j].replace(':-(', "")
+            df.loc[i, j] = df.loc[i, j].replace(':-)', "")
             df.loc[i, j] = df.loc[i, j].replace('&', "and")
             df.loc[i, j] = df.loc[i, j].lower()
             df.loc[i, j] = '</s>' + df.loc[i, j] + '</s>'
 
-f = open('preprocessed_twitter_data_test_100.txt', 'w')
+f = open('preprocessed_twitter_data_100.txt', 'w')
 
 for i in range(df.shape[0]):
     j=0
     context = ''
-    while(df.loc[i, j] != ""):
+    while(df.loc[i, j] != "" and j < 150):
         context = context + df.loc[i, j]
         j=j+1
     context = context + '\n'
